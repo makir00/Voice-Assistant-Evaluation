@@ -255,6 +255,7 @@ The assistant is expected not to present itself as a qualified professional when
 ---
 
 ## 🔊 Voice & Spoken Interaction
+> **Note:** DeepEval's voice evaluation capabilities are currently marked as **Beta** in the official documentation. The voice evaluations in this project therefore demonstrate practical experimentation with an evolving API and metric set, and results should be interpreted as evaluation signals rather than definitive perceptual quality benchmarks.
 
 Voice quality is evaluated independently of transcript quality. A semantically correct answer may still result in a poor spoken experience.
 
