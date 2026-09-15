@@ -51,7 +51,7 @@ The evaluation boundary is selected according to the behavior being measured. No
 
 Three complementary evaluation approaches are used.
 
-### 🧫 Fixture-Based Evaluation
+### 📌 Fixture-Based Evaluation
 
 Controlled inputs and recorded WAV fixtures are used where stable and repeatable scenarios are important.
 
