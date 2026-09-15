@@ -13,8 +13,13 @@ A response may be factually correct while losing information established earlier
 For this reason, the project does not rely on a single overall quality score. Evaluation is divided into distinct quality dimensions covering **multi-turn conversation quality, tool use, groundedness, prompt alignment, safety, and voice interaction**. Controlled fixtures, scenario- and persona-driven simulations, built-in DeepEval metrics, voice evaluation, and custom `ConversationalGEval` criteria are used according to the quality risk being measured.
 
 The objective is not to maximize the number of metrics used, but to build a coherent evaluation strategy around a set of core questions:
+* **What failure is being targeted?**
+* **Which scenario can expose it?**
+* **Is a persona required?**
+* **At which layer should the behavior be measured?**
+* **What context does the evaluator need?**
+* **When should the evaluator's conclusion itself be questioned?**
 
-> **What failure is being targeted? Which scenario can expose it? Is a persona required? At which layer should the behavior be measured? What context does the evaluator need? And when should the evaluator's conclusion itself be questioned?**
 
 These questions form the foundation of the evaluation approach demonstrated throughout the project.
 
@@ -26,10 +31,10 @@ The system under evaluation is a travel voice assistant designed around a delibe
 
 The assistant supports:
 
-* weather queries
-* attraction recommendations
-* restaurant recommendations
-* contextual follow-up questions
+* Weather queries
+* Attraction recommendations
+* Restaurant recommendations
+* Contextual follow-up questions
 
 Three tools are available to the agent:
 
@@ -49,15 +54,14 @@ The complete voice interaction follows:
 
 The evaluation boundary is selected according to the behavior being measured. Not every evaluation is routed through the complete voice pipeline when additional components would introduce variability unrelated to the targeted quality risk.
 
-Three complementary evaluation approaches are used.
-
+Three complementary evaluation approaches are used: **Fixture-based evaluation**, **Simulation-based evaluation**, and **Real-time evaluation**
 ### 📌 Fixture-Based Evaluation
 
 Controlled inputs and recorded WAV fixtures are used where stable and repeatable scenarios are important.
 
 This approach is particularly useful for regression-oriented evaluations and for cases where a known audio input should pass through the actual voice pipeline.
 
-Some evaluations remain intentionally text-based when voice processing would not contribute to the behavior being measured.
+Some evaluations, particularly **safety** and **groundedness** checks, remain intentionally text-based when voice processing would not contribute to the behavior being measured.
 
 ### 🔄 Simulation-Based Evaluation
 
@@ -92,7 +96,9 @@ This is intended for exploratory human evaluation and is kept separate from auto
 
 # 📊 Evaluation Coverage
 
-The suite is organized by **quality risk rather than metric type**. Each metric targets a specific failure mode, and scenarios are designed to expose that behavior without unnecessarily mixing unrelated concerns.
+Each evaluation is designed around a **specific quality risk or failure mode**. Scenarios are selected to deliberately expose the behavior being evaluated, while unrelated components are excluded where they would add unnecessary variability.
+
+For example, **knowledge-retention** scenarios require the assistant to recall information established earlier in the conversation, while **bias** scenarios introduce controlled demographic assumptions to test whether the assistant reinforces them.
 
 ---
 
