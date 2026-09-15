@@ -523,20 +523,10 @@ The evaluation suite is primarily organized by how evaluation data is produced:
 * OpenAI API key
 * Anthropic API key for evaluations using an Anthropic judge
 
-### 📦 Installation
+###  ⚙️ Environment Setup
 
-```bash id="ijg78d"
-git clone <repository-url>
-cd Voice-Assistant-Evaluation
 
-python3 -m venv .venv
-source .venv/bin/activate
-
-pip install -e ".[dev]"
-```
-
-Create the local environment file:
-
+After cloning the repository, create the local environment file:
 ```bash id="g8w5l1"
 cp .env.example .env
 ```
@@ -553,7 +543,7 @@ OPENAI_TTS_MODEL=gpt-4o-mini-tts
 OPENAI_TTS_VOICE=nova
 ```
 
-The `.env` file is excluded from version control.
+The `.env` file is excluded from version control because it contains sensitive credentials such as API keys.
 
 ### 🧪 Run an Evaluation
 
