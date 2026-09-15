@@ -1,0 +1,30 @@
+# Environment
+.env
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Test / evaluation artifacts
+.pytest_cache/
+.deepeval/
+.coverage
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+
+# IDE
+.idea/
+
+# Generated audio
+audio data/debug/
+audio data/interactive/
+audio data/simulations/
+debug_audio/
+
+# macOS
+.DS_Store
