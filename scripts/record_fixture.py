@@ -6,7 +6,7 @@ from pathlib import Path
 from src.voice.microphone import Microphone
 
 
-FIXTURES_DIR = Path("audio data/fixtures")
+FIXTURES_DIR = Path("audio_data/fixtures")
 
 
 def parse_args() -> argparse.Namespace:

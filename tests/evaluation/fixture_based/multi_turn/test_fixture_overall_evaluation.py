@@ -26,7 +26,7 @@ from src.voice.voice_pipeline import VoicePipeline
 
 
 FIXTURES_DIR = Path(
-    "audio data/fixtures"
+    "audio_data/fixtures"
 )
 
 CHATBOT_ROLE = (

@@ -21,9 +21,9 @@ dist/
 .idea/
 
 # Generated audio
-audio data/debug/
-audio data/interactive/
-audio data/simulations/
+audio_data/debug/
+audio_data/interactive/
+audio_data/simulations/
 debug_audio/
 
 # macOS

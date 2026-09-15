@@ -7,7 +7,7 @@ from src.voice.voice_pipeline import VoicePipeline
 
 
 INTERACTIVE_AUDIO_DIR = Path(
-    "audio data/interactive"
+    "audio_data/interactive"
 )
 
 

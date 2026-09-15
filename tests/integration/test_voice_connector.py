@@ -11,7 +11,7 @@ from src.adapter.voice_connector import (
 
 
 FIXTURE_PATH = Path(
-    "audio data/fixtures/main/turn1.wav"
+    "audio_data/fixtures/main/turn1.wav"
 )
 
 
