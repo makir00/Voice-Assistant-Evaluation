@@ -101,7 +101,20 @@ Each evaluation is designed around a **specific quality risk or failure mode**. 
 For example, **knowledge-retention** scenarios require the assistant to recall information established earlier in the conversation, while **bias** scenarios introduce controlled demographic assumptions to test whether the assistant reinforces them.
 
 ---
+# 📈 Evaluation Scores
 
+DeepEval metrics generally return a **score between `0` and `1`**, where higher scores indicate stronger performance against the behavior being evaluated.
+
+Each evaluation metric defines a **threshold** that acts as the minimum acceptable score:
+
+* `score >= threshold` → **Pass**
+* `score < threshold` → **Fail**
+
+Thresholds are configured according to the metric and evaluation objective rather than applying a single acceptance value across the entire suite.
+
+For LLM-as-a-Judge metrics, the numerical score is reviewed together with the evaluator's reasoning (`include_reason=True`), since the score alone may not fully explain the observed behavior.
+
+--- 
 ## 💬 Conversational Quality & Agent Behavior
 
 ### ✅ Conversation Completeness
@@ -141,7 +154,7 @@ Used to evaluate whether each assistant response remains relevant to the current
 
 Contextual follow-ups are used where the overall topic remains related while the immediate intent changes. This separates the ability to **retain previous context** from the ability to **respond to the current turn**.
 
-### 🧭 Role Adherence
+### 🫡 Role Adherence
 
 **`RoleAdherenceMetric`**
 
@@ -171,7 +184,7 @@ Deterministic tool outputs make failures easier to investigate as **agent decisi
 
 ## 🎯 Groundedness & Instruction Following
 
-### 🔎 Hallucination
+###  👻 Hallucination
 
 **`HallucinationMetric`**
 
@@ -254,14 +267,14 @@ Used to evaluate whether appropriate boundaries are maintained around profession
 
 The evaluation covers:
 
-`medical` · `financial` · `legal`
+`Medical` · `Financial` · `Legal`
 
 The assistant is expected not to present itself as a qualified professional when a conversation moves into one of these higher-risk domains.
 
 ---
 
 ## 🔊 Voice & Spoken Interaction
-> **Note:** DeepEval's voice evaluation capabilities are currently marked as **Beta** in the official documentation. The voice evaluations in this project therefore demonstrate practical experimentation with an evolving API and metric set, and results should be interpreted as evaluation signals rather than definitive perceptual quality benchmarks.
+> **Note:** As of **September 2026**, DeepEval's voice evaluation capabilities are marked as **Beta** in the official documentation. The voice evaluations in this project therefore demonstrate practical experimentation with an evolving API and metric set, and results should be interpreted as evaluation signals rather than definitive perceptual quality benchmarks.
 
 Voice quality is evaluated independently of transcript quality. A semantically correct answer may still result in a poor spoken experience.
 
@@ -341,10 +354,10 @@ The simulated caller remains impatient and dismissive while continuing to make l
 
 The evaluation checks whether the assistant:
 
-* remains calm and professional
-* avoids mirroring the user's negative tone
-* avoids sarcasm or defensiveness
-* continues helping with reasonable requests
+* Remains calm and professional
+* Avoids mirroring the user's negative tone
+* Avoids sarcasm or defensiveness
+* Continues helping with reasonable requests
 
 The persona is central to this evaluation because **user behavior is part of the condition under which assistant behavior is being measured**.
 
@@ -527,7 +540,8 @@ The evaluation suite is primarily organized by how evaluation data is produced:
 
 * Python 3.14+
 * OpenAI API key
-* Anthropic API key for evaluations using an Anthropic judge
+* Anthropic API key for evaluations that use an Anthropic model as an **LLM-as-a-Judge**
+
 
 ###  ⚙️ Environment Setup
 
@@ -550,6 +564,7 @@ OPENAI_TTS_VOICE=nova
 ```
 
 The `.env` file is excluded from version control because it contains sensitive credentials such as API keys.
+> **Note:** Evaluation results can optionally be visualized and tracked using the **Confident AI** platform. As platform access requires sign-in with a company account, this project currently runs DeepEval evaluations locally without Confident AI integration.
 
 ### 🧪 Run an Evaluation
 
@@ -593,7 +608,7 @@ A production voice system would require broader coverage across accents, backgro
 ---
 ## 📚 References
 
-* [DeepEval — GitHub Repository](https://github.com/confident-ai/deepeval)
 * [DeepEval — Official Documentation](https://deepeval.com/docs/introduction)
+* [DeepEval — GitHub Repository](https://github.com/confident-ai/deepeval)
 
 
