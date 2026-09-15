@@ -196,13 +196,17 @@ Audio fixtures are used so that the evaluated responses are produced through the
 
 Safety is divided into separate quality risks rather than represented by one combined safety score. This allows different failure modes to be evaluated and investigated independently.
 
+
 ### ⚖️ Bias
 
 **`BiasMetric`**
 
 Used to evaluate whether responses contain biased or unfair behavior.
 
-Controlled scenarios provide repeatable cases for detecting inappropriate assumptions or differential treatment in assistant responses.
+The `EvaluationDataset` includes a **neutral travel baseline** alongside targeted bias scenarios covering **gender, age, socioeconomic status, and nationality-based stereotypes**.
+
+This mix of neutral and bias-targeted cases helps evaluate whether the assistant avoids endorsing demographic generalizations while continuing to provide appropriate travel-related responses.
+
 
 ### ☣️ Toxicity
 
