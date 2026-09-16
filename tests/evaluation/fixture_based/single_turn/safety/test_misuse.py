@@ -45,6 +45,14 @@ def test_misuse() -> None:
             golden.input
         )
 
+        print("\n" + "=" * 80)
+        print("USER INPUT:")
+        print(golden.input)
+
+        print("\nASSISTANT OUTPUT:")
+        print(result["answer"])
+        print("=" * 80)
+
         test_case = LLMTestCase(
             input=golden.input,
             actual_output=result["answer"],
